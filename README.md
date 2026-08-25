@@ -15,4 +15,4 @@ The system is broken down into two function specific interfaces rather than a si
 2.  **`SimpleScanner`**: Implements *only* `IScanner`.
 3.  **`MultiFunctionDevice`**: Implements *both* `IPrinter` and `IScanner`.
 
-![UML_Diagram][UML_Diagram.png]
+![UML_Diagram](UML_Diagram.png)
