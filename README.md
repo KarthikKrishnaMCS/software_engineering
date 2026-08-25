@@ -11,9 +11,9 @@ The system is broken down into two function specific interfaces rather than a si
 *   **`IScanner`**: Exposes only the `Scan()` capability.
 
 ### Device Implementations
-1.  **`SimplePrinter`**: Implements *only* `IPrinter`.
-2.  **`SimpleScanner`**: Implements *only* `IScanner`.
-3.  **`MultiFunctionDevice`**: Implements *both* `IPrinter` and `IScanner`.
+1.  **`SimplePrinter`**: Implements only `IPrinter`.
+2.  **`SimpleScanner`**: Implements only `IScanner`.
+3.  **`MultiFunctionDevice`**: Implements both `IPrinter` and `IScanner`.
 
 ![UML_Diagram](UML_Diagram.png)
 
@@ -31,3 +31,13 @@ To prevent duplicate code, the `MultiFunctionDevice` utilizes **Composition**. R
 Navigate to the root project directory and execute the following commands:
 *   **To Build:** `dotnet build`
 *   **To Test:** `dotnet test`
+
+## Test Summary
+
+The `DeviceTests.cs` script acts as the system executive for verifying the state and logic of the architecture without the need for a separate Console Application.
+
+**Test Cases Implemented:**
+*   **`SimplePrinter_Test`**: Verifies that the printer successfully receives the string input and updates its internal `LastPrintedDocument` state.
+*   **`SimpleScanner_Test`**: Verifies that the scanner returns its default text output.
+*   **`MultiFunctionDevice_Test`**: Verifies that the composite class successfully assigns printing and scanning tasks to its internal components.
+*   **`MultiFunctionDevice_ErrorTest`**: An edge-case test confirming that the constructor safely throws an `ArgumentNullException` if either component is missing.
