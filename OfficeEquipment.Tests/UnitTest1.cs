@@ -54,5 +54,17 @@ namespace OfficeEquipment.Tests
             Assert.Equal(doc,printer.LastPrintedDocument);
             Assert.Equal("Scanned content",result);
         }
+
+        /// <summary>
+        /// MultiFunctionDevice Error Test
+        /// </summary>
+        [Fact]
+        public void MultiFunctionDevice_ErrorTest()
+        {
+            IPrinter? printer = null;
+            var scanner = new SimpleScanner();
+
+            Assert.Throws<ArgumentNullException>(() => new MultiFunctionDevice(printer!,scanner));
+        }
     }
 }
