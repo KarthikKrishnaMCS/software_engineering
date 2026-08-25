@@ -20,4 +20,14 @@ The system is broken down into two function specific interfaces rather than a si
 ## Composition of Capabilities
 To prevent duplicate code, the `MultiFunctionDevice` utilizes **Composition**. Rather than defining its own printing and scanning logic from scratch, it acts as a composite class. It takes in an `IPrinter` and an `IScanner` component via its constructor and simply assigns the tasks to those dedicated internal components when its methods are invoked.
 
+## Build and Test Instructions
 
+**Using Visual Studio (GUI):**
+1. Open the `.sln` file in Visual Studio.
+2. **Build:** Select **Build** > **Build Solution** from the top menu.
+3. **Test:** Open the **Test Explorer** panel and click **Run All Tests**.
+
+**Using the Command Line (CLI):**
+Navigate to the root project directory and execute the following commands:
+*   **To Build:** `dotnet build`
+*   **To Test:** `dotnet test`
